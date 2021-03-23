@@ -10,12 +10,15 @@ provider "aws" {
    region = "eu-west-1"
 }
 
+variable "app_version" {
+}
+
 resource "aws_lambda_function" "example" {
    function_name = "ServerlessExample"
 
    # The bucket name as created earlier with "aws s3api create-bucket"
    s3_bucket = "terraform-serverless-example-neiltest"
-   s3_key    = "v1.0.0/example.zip"
+   s3_key    = "v${var.app_version}/example.zip"
 
    # "main" is the filename within the zip file (main.js) and "handler"
    # is the name of the property under which the handler function was

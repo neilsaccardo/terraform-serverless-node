@@ -105,3 +105,7 @@ dist
 
 # Local .terraform directories
 **/.terraform/*
+
+**tfstate**
+
+example.zip
